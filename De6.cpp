@@ -30,7 +30,7 @@ HANG nhapHang()
 
 void nhapDsHang(TRO &L, int &n)
 {
-    TRO p, Q;
+    TRO P, Q;
     L = NULL;
     cout << "Nhap so luong mat hang = ";
     cin >> n;
@@ -48,7 +48,7 @@ void nhapDsHang(TRO &L, int &n)
     }
 }
 
-void xuatHang(Hang x)
+void xuatHang(HANG x)
 {
     cout << setw(10) <<x.maHang<<setw(20)<<x.tenHang<<setw(10)<<x.soLuong;
 }
@@ -70,6 +70,7 @@ void xuatDsHang(TRO &L)
     {
         cout << setw(5) <<++d;
         xuatHang(Q->info);
+        cout << endl;
         Q = Q->next;
     }
 }
@@ -103,6 +104,7 @@ void timHangMin(TRO &L)
 		if (Q->info.soLuong == soLuongMin) {
 			cout << setw(5) << count + 1;
 			xuatHang(Q->info);
+			cout << endl;
 		}
 		count += 1;
 		Q = Q->next;
@@ -185,6 +187,7 @@ int main() {
 	timHangMin(L);
 	xoaHangMin(L);
 	boSungHang(L, 2);
+	xuatDsHang(L);
 	return 0;
 }
 
